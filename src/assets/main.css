@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --W: 1080px;
+  --H: 1920px;
+}
+
+html, body {
+  background: radial-gradient(80% 60% at 50% 0, #8b5cf640, #0000 70%), #000;
+  min-height: 100vh;
+  min-width: 100vw;
+  height: auto;
+  width: auto;
+  overflow: hidden;
+  color: #fff;
+}
+
+
+body:not(.render) .stage {
+  transform: scale(var(--scale, .45));
+}
+
+/* En render: pas de header, 1:1, fond neutre */
+body.render header {
+  display: none;
+}
+
+body.render #app {
+  grid-template-rows: 1fr;
+}
